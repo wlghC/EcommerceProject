@@ -4,26 +4,38 @@ export default {
     type: "document",
     fields: [
       {
-        name: "title",
-        title: "Title",
-        type: "string",
-      },
-      {
-        name: "price",
-        title: "Price",
-        type: "number",
-      },
-      {
         name: "image",
         title: "Image",
-        type: "image",
-        options: { hotspot: true },
+        type: "array",
+        of: [{ type: 'Image'}],
+        option: {
+            hotspot: true,
+        }
       },
       {
-        name: "description",
-        title: "Description",
-        type: "text",
+        name: 'name',
+        title: 'Name',
+        type: 'string',
       },
+      {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        option: {
+            source: 'name',
+            maxLength: 90,
+        }
+      },
+      {
+        name: 'price',
+        title: 'Price',
+        type: 'number',
+      },
+      {
+        name: 'details',
+        title: 'Details',
+        type: 'string',
+      }
     ],
   };
   
